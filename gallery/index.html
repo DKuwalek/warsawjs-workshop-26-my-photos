@@ -33,7 +33,11 @@
 <button onclick="showeringoAlteringoTingos(event)">SHOWERINGO altos ringos</button>
 <hr/>
 <button onclick="showeringoCaringoTingo(event)">SHOWERINGO Caringo primo</button>
-
+<hr/>
+<input id="search" type="text" placeholder="Texterino searcherino" onclick="searchAlteringo(this)"/>
+<button id="submit" onclick="searchAlteringo()">Searcherino!</button>
+<hr/>
+<div id="resultatio"></div>
 <hr/>
 <img id="switcheringo" style="height:300px">
 
@@ -146,6 +150,19 @@
             }
         
         window.addEventListener("scroll", getterinoPositionerino);
+        
+        
+        function searchAlteringo() {
+            let inputValue = document.getElementById("search").value;
+            console.log(inputValue);
+            document.querySelectorAll(".data").forEach(element=>{
+                if(element.getAttribute("alt")===inputValue){
+                   document.getElementById("resultatio").appendChild(element);
+                }
+            });
+        }
+        
+        
         </script>
 </div>
 </body>
