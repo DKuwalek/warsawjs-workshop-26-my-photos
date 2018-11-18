@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>...::: WarsawJS Workshop #26 - My Photos :::...</title>
+</head>
+<body>
+    
+<div id=gallerino>
+    <img class="data" id="caringo" src="../imaginaros/IMG_3271.JPG" style="width:200px" alt="caringo"> 
+    <img class="data" id="bridgeringo" src="../imaginaros/gordon_dam_tasmania_australia.jpg" style="width:200px">
+    <img class="data" id="quotaringo" src="../imaginaros/Warren Buffet.png" style="width:200px">
+    <img class="data" id="caringo2" src="../imaginaros/IMG_3258.JPG" style="width:200px" alt="caringo2-altingo">
+    <img class="data" id="caringo3" src="../imaginaros/IMG_3284.JPG" style="width:200px" alt="caringo3-altingo">
+    <img class="data" id="caringo4" src="../imaginaros/IMG_3288.JPG" style="width:200px" alt="caringo4-altingo">
+    <img class="data" id="sydneringo" src="../imaginaros/sydney_opera_house_australia_2-wallpaper-2880x1800.jpg" style="width:200px">
+</div>
+<button onclick="hiderinoOtherinoTingos(event)">Hiderinos otheringos</button>
+<button onclick="showeringoAlteringoTingos(event)">SHOWERINGO altos ringos</button>
+<button onclick="showeringoCaringoTingo(event)">SHOWERINGO altos ringos</button>
+
+<hr/>
+
+
+<img id="switcheringo" style="width:300px">
+
+
+
+<script>
+    let currentIndex = 0;
+        console.log("Scripterino!");    
+        console.log(document.getElementById("caringo"));
+        document.getElementById("caringo").classList.add("DABINGO");
+        document.getElementById("bridgeringo").classList.add("DABINGO");
+        document.getElementById("quotaringo").classList.add("DABINGO");
+        document.getElementById("caringo2").classList.add("DABINGO");
+        document.getElementById("caringo3").classList.add("DABINGO");
+        document.getElementById("caringo4").classList.add("DABINGO");
+        document.getElementById("sydneringo").classList.add("DABINGO");
+
+        document.addEventListener("click", function(e){
+            e.srcElement.classList.add("CLICKERINGO")
+            // console.log();
+
+        })
+
+        function changerino(){
+            document.getElementById("switcheringo").src = document.getElementById("sydneringo").src;
+            let imagerinos = document.getElementsByClassName("data");
+            if(currentIndex === imagerinos.length-1){
+                currentIndex=0;
+            } else {
+                currentIndex++;
+            }
+            let elemento = document.getElementById("switcheringo");
+            // console.log(elemento);
+            let indexe = imagerinos[currentIndex].src;
+            elemento.src = indexe;
+            // console.log("Dingo")
+          setTimeout(changerino, 1000);
+            
+        }
+
+        changerino();
+
+        function hiderinoOtherinoTingos(event){
+            // console.log(event);
+            event.srcElement;
+            // console.log(document.querySelectorAll("[alt]"));
+            let imagerinosWithAlts = document.querySelectorAll("[alt]");
+            imagerinosWithAlts.forEach(element => {
+                // console.log(element);
+                element.setAttribute("style", "width:0px");
+            });
+
+        }
+
+         function showeringoAlteringoTingos(event){
+            // console.log(event);
+            event.srcElement;
+            // console.log(document.querySelectorAll("[alt]"));
+            let imagerinosWithAlts = document.querySelectorAll("[alt]");
+            imagerinosWithAlts.forEach(element => {
+                // console.log(element);
+                element.setAttribute("style", "width:200px");
+            });
+
+        }
+    
+
+         function showeringoCaringoTingo(event){
+            // console.log(event);
+            event.srcElement;
+            // console.log(document.querySelectorAll("[alt]"));
+            let imagerinosWithAlts = document.querySelectorAll("[alt='caringo']");
+            imagerinosWithAlts.forEach(element => {
+                // console.log(element);
+                element.setAttribute("style", "width:200px");
+            });
+
+        }
+        </script>
+</div>
+</body>
+</html>
