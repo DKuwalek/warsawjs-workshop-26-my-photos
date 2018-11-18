@@ -3,6 +3,8 @@ let activeIndex = 0;
 let time = 1000;
 let imageirnoSliderinoElementerino = document.querySelector(".imagerino-sliderino");
 
+console.log(imagineros[0]);
+
 function changerinoSliderino(){
     if (this.className === 'prawerinio') {
         activeIndex+=1;
@@ -20,6 +22,11 @@ let buttonesChangerones = document.getElementsByTagName("button");
 for (let i = 0; i <buttonesChangerones.length; i++) {
     buttonesChangerones[i].addEventListener("click", changerinoSliderino);
 }
+
+function getterinoPositionerino(){
+    // console.log(window.pageYOffset);
+}
+window.addEventListener("scroll", getterinoPositionerino);
 // function switcherinoToNexterino () {
 //     imageirnoSliderinoElementerino.src = imagineros[activeIndex];
 //     if(activeIndex == (imagineros.length-1)){
