@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <style>
+                .hidden {
+                 display: none;
+                }
+                
+                
+        </style>
     <meta charset="UTF-8">
     <title>...::: WarsawJS Workshop #26 - My Photos :::...</title>
 </head>
 <body>
-    
+<div id="zoomerino"></div>
+<hr/>
 <div id=gallerino>
-    <img class="data" id="caringo" src="../imaginaros/IMG_3271.JPG" style="width:200px" alt="caringo"> 
-    <img class="data" id="bridgeringo" src="../imaginaros/gordon_dam_tasmania_australia.jpg" style="width:200px">
-    <img class="data" id="quotaringo" src="../imaginaros/Warren Buffet.png" style="width:200px">
-    <img class="data" id="caringo2" src="../imaginaros/IMG_3258.JPG" style="width:200px" alt="caringo2-altingo">
-    <img class="data" id="caringo3" src="../imaginaros/IMG_3284.JPG" style="width:200px" alt="caringo3-altingo">
-    <img class="data" id="caringo4" src="../imaginaros/IMG_3288.JPG" style="width:200px" alt="caringo4-altingo">
-    <img class="data" id="sydneringo" src="../imaginaros/sydney_opera_house_australia_2-wallpaper-2880x1800.jpg" style="width:200px">
+    <img class="data" id="caringo" src="../imaginaros/IMG_3271.JPG" style="height:200px" alt="caringo" onmouseover="enlargingo(this)"> 
+    <img class="data" id="bridgeringo" src="../imaginaros/gordon_dam_tasmania_australia.jpg" style="height:200px" onmouseover="enlargingo(this)">
+    <img class="data" id="quotaringo" src="../imaginaros/Warren Buffet.png" style="height:200px" onmouseover="enlargingo(this)">
+    <img class="data" id="caringo2" src="../imaginaros/IMG_3258.JPG" style="height:200px" alt="caringo2-altingo" onmouseover="enlargingo(this)">
+    <img class="data" id="caringo3" src="../imaginaros/IMG_3284.JPG" style="height:200px" alt="caringo3-altingo" onmouseover="enlargingo(this)">
+    <img class="data" id="caringo4" src="../imaginaros/IMG_3288.JPG" style="height:200px" alt="caringo4-altingo" onmouseover="enlargingo(this)">
+    <img class="data" id="sydneringo" src="../imaginaros/sydney_opera_house_australia_2-wallpaper-2880x1800.jpg" style="width:200px" onmouseover="enlargingo(this)">
 </div>
+<hr/>
+<div style="position: relative">
+    <img id="ghosteringo" src="../imaginaros/IMG_3271.JPG" style="height:200px;position: absolute;left:-400px"> 
+</div>
+<hr/>
 <button onclick="hiderinoOtherinoTingos(event)">Hiderinos otheringos</button>
+<hr/>
 <button onclick="showeringoAlteringoTingos(event)">SHOWERINGO altos ringos</button>
-<button onclick="showeringoCaringoTingo(event)">SHOWERINGO altos ringos</button>
+<hr/>
+<button onclick="showeringoCaringoTingo(event)">SHOWERINGO Caringo primo</button>
 
 <hr/>
-
-
-<img id="switcheringo" style="width:300px">
-
-
+<img id="switcheringo" style="height:300px">
 
 <script>
     let currentIndex = 0;
@@ -70,9 +81,9 @@
             let imagerinosWithAlts = document.querySelectorAll("[alt]");
             imagerinosWithAlts.forEach(element => {
                 // console.log(element);
-                element.setAttribute("style", "width:0px");
+                // element.setAttribute("style", "width:0px");
+                element.classList.add("hidden");
             });
-
         }
 
          function showeringoAlteringoTingos(event){
@@ -82,9 +93,9 @@
             let imagerinosWithAlts = document.querySelectorAll("[alt]");
             imagerinosWithAlts.forEach(element => {
                 // console.log(element);
-                element.setAttribute("style", "width:200px");
+                // element.setAttribute("style", "width:200px");
+                element.classList.remove("hidden");
             });
-
         }
     
 
@@ -95,10 +106,46 @@
             let imagerinosWithAlts = document.querySelectorAll("[alt='caringo']");
             imagerinosWithAlts.forEach(element => {
                 // console.log(element);
-                element.setAttribute("style", "width:200px");
+                // element.setAttribute("style", "width:200px");
+                element.classList.remove("hidden");
             });
-
         }
+
+        function enlargingo(e){
+            // console.log("MOUSERINO" + e.src);
+            let imagerino = new Image();
+            imagerino.src = e.src;
+            imagerino.height = 200;
+            // console.log(imagerino);
+            // document.getElementById("zoomerino").appendChild(imagerino);
+        }
+
+        let alreadyShown = false;
+        function getterinoPositionerino(){
+            // console.log(window.pageYOffset);
+            if(window.pageYOffset>=100 && !alreadyShown){
+                console.log("SLIDE IN");
+                alreadyShown = true;
+                animateImage();
+            }
+        }
+        function animateImage(){
+            let iterator = 0;
+            let ghostImage = document.getElementById("ghosteringo");
+            var pos = -300;
+                var id = setInterval(frame, 1);
+                function frame() {
+                    if (pos == 0) {
+                    clearInterval(id);
+                    } else {
+                    pos++; 
+                    // ghostImage.style.top = pos + 'px'; 
+                    ghostImage.style.left = pos + 'px'; 
+                    }
+                }
+            }
+        
+        window.addEventListener("scroll", getterinoPositionerino);
         </script>
 </div>
 </body>
