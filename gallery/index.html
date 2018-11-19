@@ -21,11 +21,7 @@
     <img class="data" id="caringo2" src="../imaginaros/IMG_3258.JPG" style="height:200px" alt="caringo2-altingo" onmouseover="enlargingo(this)">
     <img class="data" id="caringo3" src="../imaginaros/IMG_3284.JPG" style="height:200px" alt="caringo3-altingo" onmouseover="enlargingo(this)">
     <img class="data" id="caringo4" src="../imaginaros/IMG_3288.JPG" style="height:200px" alt="caringo4-altingo" onmouseover="enlargingo(this)">
-    <img class="data" id="sydneringo" src="../imaginaros/sydney_opera_house_australia_2-wallpaper-2880x1800.jpg" style="width:200px" onmouseover="enlargingo(this)">
-</div>
-<hr/>
-<div style="position: relative;height: 200px">
-    <img id="ghosteringo" src="../imaginaros/IMG_3271.JPG" style="height:200px;position: absolute;left:-400px"> 
+    <img class="data" id="sydneringo" src="../imaginaros/sydney_opera_house_australia_2-wallpaper-2880x1800.jpg" style="height:200px" onmouseover="enlargingo(this)">
 </div>
 <hr/>
 <button onclick="hiderinoOtherinoTingos(event)">Hiderinos otheringos</button>
@@ -33,18 +29,28 @@
 <button onclick="showeringoAlteringoTingos(event)">SHOWERINGO altos ringos</button>
 <hr/>
 <button onclick="showeringoCaringoTingo(event)">SHOWERINGO Caringo primo</button>
+
+<hr/>
+<div style="position: relative;height: 200px">
+    <img id="ghosteringo" src="../imaginaros/IMG_3271.JPG" style="height:200px;position: absolute;left:-400px"> 
+</div>
 <hr/>
 <input id="search" type="text" placeholder="Texterino searcherino" onclick="searchAlteringo(this)"/>
 <button id="submit" onclick="searchAlteringo()">Searcherino!</button>
 <hr/>
 <div id="resultatio"></div>
 <hr/>
+<div id="ghostingo-zoomeringo" style="position: relative;height: 200px">
+    <img id="caringo-inside-zoomeringo" src="../imaginaros/IMG_3271.JPG" style="height:200px" onmouseover="mOver(this)" onmouseout="mOut(this)"> 
+    
+</div>
+<hr/>
 <img id="switcheringo" style="height:300px">
 
 <script>
     let currentIndex = 0;
-        console.log("Scripterino!");    
-        console.log(document.getElementById("caringo"));
+        // console.log("Scripterino!");    
+        // console.log(document.getElementById("caringo"));
         document.getElementById("caringo").classList.add("DABINGO");
         document.getElementById("bridgeringo").classList.add("DABINGO");
         document.getElementById("quotaringo").classList.add("DABINGO");
@@ -102,7 +108,6 @@
             });
         }
     
-
          function showeringoCaringoTingo(event){
             // console.log(event);
             event.srcElement;
@@ -161,8 +166,30 @@
                 }
             });
         }
-        
-        
+        let bigshow = true;
+        function mOver(element) {
+            console.log("mouse over");
+                if (bigshow === true) {
+                    console.log("big show is on!");
+                    let divOrganizer = document.getElementById("ghostingo-zoomeringo");
+                    let imaginos = new Image();
+                    imaginos.height = 500;
+                    imaginos.src=element.src;
+                    imaginos.style.position = "absolute";
+                    // imaginos.style.left = "0px";
+                    imaginos.id = "largerinoooo";
+                    divOrganizer.appendChild(imaginos);
+                    // bigshow = false;
+                
+            }
+        }
+
+        function mOut(element){
+            console.log("mouse out");
+            document.querySelectorAll("#largerinoooo").forEach(element => {
+                element.classList.add("hidden");
+            });
+        }
         </script>
 </div>
 </body>
